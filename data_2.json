@@ -1,0 +1,7 @@
+"foo": [
+    {
+        "bar": "optionK",
+        "barOption": ["option1", "option2", …, "optionN"]
+    }
+    …
+]
