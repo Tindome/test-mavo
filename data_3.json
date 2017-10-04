@@ -1,0 +1,16 @@
+{
+	"projets": [
+		{
+			"code": "Projet1",
+			"name": "Démarrez votre formation de Community Manager (P1)"
+		},
+		{
+			"code": "Projet2",
+			"name": "24h dans la vie d'un community manager (P2)"
+		},
+		{
+			"code": "Projet3",
+			"name": "Animez plusieurs communautés avec différents discours de marque (P3)"
+		}
+	]
+}
