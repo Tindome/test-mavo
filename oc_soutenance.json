@@ -1,1 +1,24 @@
-
+{
+  "parcours" : [
+		{
+			"cod0": "CPMD",
+			"cod1": "CDPM_Dev",
+      			"name": "Chef de projet multimedia Developpement"
+		},    
+		{
+			"cod0": "CPMD",
+			"cod1": "CDPM_Design",
+      			"name": "Chef de projet multimedia Design"
+		},  
+    		{
+			"cod0": "CPMD",
+			"cod1": "CDPM_Mark",
+      			"name": "Chef de projet multimedia Marketing"
+		},  
+		{
+			"cod0": "CPMD",
+			"cod1": "CM",
+     			 "name": "Community Manager"
+		}      
+  ]
+}
