@@ -1,0 +1,83 @@
+ce que je comprends c'est que ce que je veux faire n'est pas faisable ou pas comme je voudrais
+si je charge chaque list box à partir de mon fichier et que j'affiche ou pas la liste box en fonction d'un choix ça devrait potentiellement marcher .... et encore je n'en suis pas sur
+il faut faire une fonction qui contsruit la list box en retour
+cette dernier option ne peux pas non plus fonctionner car si on sait bien passer le parametre on ne sait pas retourner de html :(
+
+
+
+<div mv-app="montest3" mv-source="#data" mv-storage="#data">
+	[datelimite]<br>
+	[formation]<br>
+	[CM]<br>
+	[projet]
+	
+	<!-- Your Mavo app here -->
+	<h3>DateLimite</h3>
+	<span mv-multiple property="datelimite">index: [$index] valeur:
+		property="datelimite" <span property="datelimite"></span>
+		, mv-value="datelimite" <span mv-value="datelimite"></span>
+		, datelimite <span>[datelimite]</span>
+		<hr>
+	</span>
+	<hr>
+
+	<h3>Projet</h3>
+	<span mv-multiple property="projet">index: [$index] valeur:
+		<meta property="projet">
+		, mv-value="datelimite" <span mv-value="projet"></span>
+		, datelimite <span>[projet]</span>
+		<hr>
+	</span>
+	
+	Afficher une valeur : <span mv-value="projet"></span>
+
+	<meta property="temp" content="[formation]">
+	[temp]
+	<hr >
+<select id="parcours">
+<option value="[id]" property="formation" mv-multiple typeof>[name]</option>
+</select>
+
+	
+	
+<h3>dump de mon champs de data du formulaire </h3> [Mavo.all.montest3.root]	
+<hr>
+</div>
+
+<hr>
+DATAS
+
+<pre id="data">
+{
+	"datelimite": [
+		"A reception",
+		"5 jours",
+		"15 jours"
+	],
+	"formation": [
+		{	
+		"id": "CM",
+		"name": "Community Management"
+		},
+		{	
+		"id": "MKT",
+		"name": "Makretingt"
+		}
+	],
+	"projet": [
+		"toto",
+		"tata",
+		"titi"
+	],
+	"CM": [
+		{
+		"id": "01",
+		"designation" : "01-Projet P1"
+		},
+		{
+		"id": "02",
+		"designation" : "02-Projet P2"
+		}
+	]
+}
+</pre>	
