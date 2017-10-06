@@ -1,8 +1,35 @@
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<script src="https://get.mavo.io/mavo.js"></script>
+	<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<h1>Test numero 3</h1>
+	<h2>Affichage des elements d'un dictionnaire</h2>
+	<span>Petite particularité à noter
+   - ici le premier span sert à définir le chemin d'itération et à préciser que les elements qui suivent seront reproductibles
+   (mv-multiple)<br>
+   - [$index] ne renvoie pas le numéro d'iteration
+   - [id] et property="id" ou mv-value="id" vont afficher la valeur de la variable
+   - property="id" ou mv-value="id" permettent d'aller chercher une valeur de variable
+   mais le premier permet aussi de la redefinir<br>
+   - span property="id" /span défini un placeholder pour contenir la valeur datelimite, tout texte inséré 
+   entre le début de balise et la fin de balise sera remplacé sauf si on est dans une boucle (à expliquer plus en détail)<br>
+   - [Mavo.all.montest3.root]	permet d'afficher le contenu du stockage de la mv-app "montest2"<br>
+<br>
+		<em>Note ici je peux utiliser la notation [] sans soucis car l'element designé entre crochet appartient <br>
+			au contexte de l'element div mv-app</em>
+   
+   
+  </span>
 
 
 
-
-<div mv-app="montest2" mv-storage="#data">
+<div mv-app="montest3" mv-storage="#data">
 	<!-- Your Mavo app here -->
 	<span mv-multiple property="formation">index: [$index] valeur:
 		property="id" <span property="id"></span>
