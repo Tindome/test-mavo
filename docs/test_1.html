@@ -7,22 +7,25 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	
+	<h1>Test numero 1</h1>
+	<h2>Séelection dans une listbox</h2>
+	<span>la selection mets à jour le champs d'affichage à noter qu'un test est aussi effectué pour afficher une réponse determinée, ici si la valeur est supérieure à 0 jours, alors un texte sera affiché
 
-<main mv-app="todo" mv-storage="local" mv-mode="edit">
-	<header>
-		<h1>My tasks</h1>
-		<p><strong>[count(done)]</strong> done out of <strong>[count(task)]</strong> total</p>
-	</header>
+<div mv-app="appName" mv-storage="local">
+	<!-- Your Mavo app here -->
+				<select property="datelimite">
+					<option value=0>A reception</option>
+					<option value=5>A  5 jours</option>
+					<option value=15>A 15 jours</option>
+				</select>
+	
+				<span mv-if="datelimite > 0">
+					On a selectionné une valeur supérieure à 0
+				</span>
 
-	<ul>
-		<li property="task" mv-multiple>
-			<label>
-				<input property="done" type="checkbox" />
-				<span property="taskTitle">Do stuff</span>
-			</label>
-		</li>
-	</ul>
-
-</main>
+	<hr>
+valeur de la selection : [datelimite]	
+</div>
 
 </body>
