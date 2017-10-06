@@ -1,0 +1,112 @@
+
+
+<em>
+il est intéressant de noter ce qui se passe ci dessous
+
+Tant que je ne vais pas décommenter l'une ou l'autre des lignes de la boucle projet ça ne va pas fonctionner
+pourquoi ?
+car voici ce qui se passe 
+projet reste associé à l'objet json préalablement instancié 
+
+On aura a l'affichage
+index: 0 valeur: , mv-value="projet" { "undefined": "aa" } , projet { "undefined": "aa" }
+index: 1 valeur: , mv-value="projet" { "undefined": "bb" } , projet { "undefined": "bb" }
+
+comme on voit bien ci dessous projet renvoie sur un tableau
+dump de mon champs de data du formulaire
+"{\n\t\"datelimite\": [\n\t\t\"A reception\",\n\t\t\"5 jours\",\n\t\t\"15 jours\"\n\t],\n\t\"formation\": [\n\t\t{\n\t\t\t\"id\": \"CM\",\n\t\t\t\"name\": \"Community Management\"\n\t\t},\n\t\t{\n\t\t\t\"id\": \"MKT\",\n\t\t\t\"name\": \"Makretingt\"\n\t\t}\n\t],\n\t\"projet\": []\n}"
+
+si on décomentla ligne de meta en ajoutant 2 au nom de la variable voici ce que l'on a 
+index: 0 valeur: , mv-value="projet" { "projet2": "aa" } , projet { "projet2": "aa" }
+index: 1 valeur: , mv-value="projet" { "projet2": "bb" } , projet { "projet2": "bb" }
+
+dump de mon champs de data du formulaire
+"{\n\t\"datelimite\": [\n\t\t\"A reception\",\n\t\t\"5 jours\",\n\t\t\"15 jours\"\n\t],\n\t\"formation\": [\n\t\t{\n\t\t\t\"id\": \"CM\",\n\t\t\t\"name\": \"Community Management\"\n\t\t},\n\t\t{\n\t\t\t\"id\": \"MKT\",\n\t\t\t\"name\": \"Makretingt\"\n\t\t}\n\t],\n\t\"projet\": [\n\t\t{\n\t\t\t\"projet2\": \"aa\"\n\t\t},\n\t\t{\n\t\t\t\"projet2\": \"bb\"\n\t\t}\n\t]\n}"
+
+si on décomente la ligne de meta sans ajouter 2 au nom de la variable voici ce que l'on a 
+index: 0 valeur: , mv-value="projet" aa , projet aa
+index: 1 valeur: , mv-value="projet" bb , projet bb
+
+-- dump de mon champs de data du formulaire
+"{\n\t\"datelimite\": [\n\t\t\"A reception\",\n\t\t\"5 jours\",\n\t\t\"15 jours\"\n\t],\n\t\"formation\": [\n\t\t{\n\t\t\t\"id\": \"CM\",\n\t\t\t\"name\": \"Community Management\"\n\t\t},\n\t\t{\n\t\t\t\"id\": \"MKT\",\n\t\t\t\"name\": \"Makretingt\"\n\t\t}\n\t],\n\t\"projet\": [\n\t\t\"aa\",\n\t\t\"bb\"\n\t]\n}"
+</em>
+
+si je reboucle sur ce tableau sans affecter la variable, je vais voir que le probleme substiste
+la solution que kl'on pourrait utiliser et d'utiliser "undefined" en clé
+
+cette dernière solution a des effet de bord
+
+En conséquence
+
+	<span mv-multiple property="datelimite">index: [$index] valeur:
+		property="datelimite" <span property="datelimite"></span>
+		, mv-value="datelimite" <span mv-value="datelimite"></span>
+		, datelimite <span>[datelimite]</span>
+		<hr>
+	</span>
+	<hr>
+Ou ça fonctionne mais si j'enleve property comme je suis sur un array et pas un dictionnaire ça finit par bugger
+	<h3>Projet</h3>
+	<span mv-multiple property="projet">index: [$index] valeur:
+		<meta property="projet">
+		, mv-value="datelimite" <span mv-value="projet"></span>
+		, datelimite <span>[projet]</span>
+		<hr>
+	</span>
+
+
+
+
+<div mv-app="montest3" mv-source="#data" mv-storage="#data">
+	<!-- Your Mavo app here -->
+	<h3>DateLimite</h3>
+	<span mv-multiple property="datelimite">index: [$index] valeur:
+		property="datelimite" <span property="datelimite"></span>
+		, mv-value="datelimite" <span mv-value="datelimite"></span>
+		, datelimite <span>[datelimite]</span>
+		<hr>
+	</span>
+	<hr>
+
+	<h3>Projet</h3>
+	<span mv-multiple property="projet">index: [$index] valeur:
+		
+		<!--<span property="projet"></span>-->
+		<!-- <meta property="projet"> -->
+		
+		, mv-value="projet" <span mv-value="projet"></span>
+		, projet <span>[projet]</span>
+		<hr>
+	</span><br>	
+ 
+	
+<h3>dump de mon champs de data du formulaire </h3> [Mavo.all.montest3.root]	
+<hr>
+</div>
+
+<hr>
+DATAS
+
+<pre id="data">
+{
+	"datelimite": [
+		"A reception",
+		"5 jours",
+		"15 jours"
+	],
+	"formation": [
+		{	
+		"id": "CM",
+		"name": "Community Management"
+		},
+		{	
+		"id": "MKT",
+		"name": "Makretingt"
+		}
+	],
+	"projet": [
+		"aa",
+		"bb"
+	]
+}
+</pre>	
