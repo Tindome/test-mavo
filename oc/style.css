@@ -20,3 +20,17 @@ body > section, body > div {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+input {
+    padding: 2px 0;
+    font-size: inherit;
+    max-width: 20%;
+    min-width: 90px;
+    border-bottom: 1px solid;
+    border-top: 0px hidden;
+    border-right: 0px hidden;
+    border-left: 0px hidden;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    text-align: center;
+}
