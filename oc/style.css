@@ -1,0 +1,15 @@
+body {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  min-height: 100vh;
+  margin: 0;
+  font: 300 106%/1.5 Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-kerning: auto;
+  font-kerning: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+  counter-reset: figure;
+  padding: 0 1rem; }
