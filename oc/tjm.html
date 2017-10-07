@@ -1,6 +1,16 @@
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>TJM Calculator • Oc Tools</title>
+	<script src="https://get.mavo.io/mavo.js"></script>
+	<link rel="stylesheet" href="https://get.mavo.io/mavo.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main mv-app mv-bar="none">
 
 
-<div mv-app="appName">
 	<label>
 		Salaire brut Mensuel
 		<input type="number" id="salaireBrut" property value ="2500" /> €
@@ -14,7 +24,7 @@
 		<input type="number" id="coef" property value="2"/> 
 	</label>	
 <hr />
-Data
+Explications
 	<pre>
 Salaire brut : [salaireBrut] 
 Salaire brut + charges patronales : [salaireBrut] + ( [salaireBrut] x [tauxDeCharge] / 100 ) = [salaireBrut + salaireBrut * tauxDeCharge/100]
@@ -23,4 +33,6 @@ Cout d'achat du salarié : [(salaireBrut + salaireBrut * tauxDeCharge/100) * 12 
 Prix de vente du salarié : [(salaireBrut + salaireBrut * tauxDeCharge/100)*12 /216] x [coef] = [( (salaireBrut + salaireBrut * tauxDeCharge/100)*12 /216) * coef]
 	</pre>
 
-</div>
+</main>
+
+</body>
