@@ -13,3 +13,10 @@ body {
   hyphens: auto;
   counter-reset: figure;
   padding: 0 1rem; }
+
+body > section, body > div {
+    width: auto;
+    max-width: 100vw;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
